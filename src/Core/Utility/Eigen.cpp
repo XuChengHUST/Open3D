@@ -89,9 +89,6 @@ std::tuple<bool, Eigen::Matrix4d>
         SolveJacobianSystemAndObtainExtrinsicMatrix(
         const Eigen::Matrix6d &JTJ, const Eigen::Vector6d &JTr)
 {
-    std::vector<Eigen::Matrix4d> output_matrix_array;
-    output_matrix_array.clear();
-
     bool solution_exist;
     Eigen::Vector6d x;
     std::tie(solution_exist, x) = SolveLinearSystem(JTJ, -JTr);
